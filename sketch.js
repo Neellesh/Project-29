@@ -1,3 +1,5 @@
+
+  
 const Engine = Matter.Engine;
 const Render = Matter.Render;
 const World = Matter.World;
@@ -12,19 +14,18 @@ var stones = [];
 var jointpoint
 
 
-
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1200,600);
   engine = Engine.create();
   world = engine.world;
   frameRate(80);
 
   ground = new Base(width/2,height-10,width,15);
-  wall1 = new Base(100,height-160,225,100);
-  wall2 = new Base(width-100,height-160,225,100);
-  jointpoint = new Base(width - 600, height/2+10, 40, 20, "#8d6e63", true);
+  wall1 = new Base(100,height/2-100,225,100);                       
+  wall2 = new Base(width-100,height/2-100,225,100);                 
+  jointpoint = new Base(width-225, height/2-100, 40, 20);           
 
-  bridge = new Bridge(14,{x:150,y:height-160});
+  bridge = new Bridge(17,{ x: 100, y: height / 2 -100});           
 
   for(var i = 0; i <= 8; i++ ){
     var x = random(width/2 -200,width/2 + 300);
@@ -34,7 +35,7 @@ function setup() {
   }
 
   Composite.add(bridge.body,jointpoint);
-  var joinlink = new Link (bridge,jointpoint)
+  jointlink = new Link (bridge,jointpoint)
 
 }
 
@@ -46,10 +47,12 @@ function draw() {
   wall1.display();
   wall2.display();
   bridge.show();
-
+  jointpoint.display()                  
   
 
   for (var stone of stones) { 
-    stone.display(); }
+    stone.display(); 
+  }
 
 }
+
