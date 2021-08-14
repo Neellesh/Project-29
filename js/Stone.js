@@ -7,7 +7,7 @@
         this.r = 30;
         this.width = width;
         this.height = height;
-        this.body = Bodies.circle(x, y, this.r, options);
+        this.body = Bodies.circle(x, y, this.r);
         World.add(world, this.body); 
      }
 
