@@ -1,5 +1,3 @@
-
-  
 const Engine = Matter.Engine;
 const Render = Matter.Render;
 const World = Matter.World;
@@ -23,9 +21,9 @@ function setup() {
   ground = new Base(width/2,height-10,width,15);
   wall1 = new Base(100,height/2-100,225,100);                       
   wall2 = new Base(width-100,height/2-100,225,100);                 
-  jointpoint = new Base(width-225, height/2-100, 40, 20);           
+  jointpoint = new Base(width-225, height/2-100, 40, 20);          
 
-  bridge = new Bridge(17,{ x: 100, y: height / 2 -100});           
+  bridge = new Bridge(17,{ x: 100, y: height / 2 -100});            
 
   for(var i = 0; i <= 8; i++ ){
     var x = random(width/2 -200,width/2 + 300);
@@ -55,4 +53,3 @@ function draw() {
   }
 
 }
-
